@@ -1,7 +1,7 @@
 /*
  hicbit package
 */
-//% weight=10 icon="\uf013" color=#2896ff
+//% weight=10 icon="\uf211" color=#6A5ACD
 namespace hicbit {
 
     export enum hicbit_Colors {
@@ -175,6 +175,93 @@ namespace hicbit {
         TURN_RIGHT_SLOW,
         //% block="Invalid command"
         COMMAND_ERRO
+    }
+
+    export let NEW_LINE = "\r\n";
+
+    export enum Linenum {
+        //% block="first_line"
+        first_line = 0x01,
+        //% block="second_line"
+        second_line = 0x02,
+        //% block="Third_line"
+        Third_line = 0x03,
+        //% block="Fourth_line"
+        Fourth_line = 0x04,
+        //% block="Fifth_line"
+        Fifth_line = 0x05,
+        //% block="Sixth_line"
+        Sixth_line = 0x06,
+        //% block="Seventh_line"
+        Seventh_line = 0x07,
+        //% block="Eighth_line"
+        Eighth_line = 0x08
+    }
+
+    export enum unit {
+        //% block="m"
+        m = 0x01,
+        //% block="cm"
+        cm = 0x02,
+        //% block="mm"
+        mm = 0x03,
+        //% block="null1"
+        null1 = 0x04
+    }
+
+    /**
+        * Display ultrasonic distance
+        */
+    //% weight=88 blockId=setDisplay block="Display %line |text: %text | value: %value| unit1: %unit1"
+    export function setDisplay(line: Linenum, text: string, value: number = 0, unit1: unit): void {
+        let num: number = 1;
+        let text2: string = "   ";
+        switch (line) {
+            case Linenum.first_line:
+                num = 1;
+                break;
+            case Linenum.second_line:
+                num = 2;
+                break;
+            case Linenum.Third_line:
+                num = 3;
+                break;
+            case Linenum.Fourth_line:
+                num = 4;
+                break;
+            case Linenum.Fifth_line:
+                num = 5;
+                break;
+            case Linenum.Sixth_line:
+                num = 6;
+                break;
+            case Linenum.Seventh_line:
+                num = 7;
+                break;
+            case Linenum.Eighth_line:
+                num = 8;
+                break;
+        }
+        serial.writeString(num.toString());
+        if (!text) text = "";
+        serial.writeString(text);
+        serial.writeString(value.toString());
+        switch (unit1) {
+            case unit.m:
+                text2 = "m  ";
+                break;
+            case unit.cm:
+                text2 = "cm  ";
+                break;
+            case unit.mm:
+                text2 = "mm  ";
+                break;
+            case unit.null1:
+                text2 = "   ";
+                break;
+        }
+        serial.writeString(text2);
+        serial.writeString(NEW_LINE);
     }
 
     /**

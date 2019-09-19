@@ -72,6 +72,7 @@
   "hicbit.onhicbit_getAngle|param|body": "code to run when event is raised",
   "hicbit.onhicbit_getMac": "Do someting when hicbit receive mac adress",
   "hicbit.onhicbit_getMac|param|body": "code to run when event is raised",
+  "hicbit.setDisplay": "Display ultrasonic distance",
   "hicbit.setServo": "Set the angle of servo 1 to 8, range of 0~270 degree",
   "hicbitRGBColors": "hicbitRGBLight package",
   "hicbitRGBLight": "QbitRGBLight Functions",

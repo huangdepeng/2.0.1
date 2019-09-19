@@ -53,5 +53,6 @@
 	"hicbit.hicbit_intensity":"设置显示亮度(0-8)",
 	"hicbit.hicbit_off":"关闭显示功能(不会影响显示内容)",
 	"hicbit.hicbit_on":"开启显示",
+	"hicbit.setDisplay":"屏幕显示设置（行数，内容，数值，量程）",
 	"hicbit.hicbit_clear":"清除显示"
 }

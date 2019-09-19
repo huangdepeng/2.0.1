@@ -151,5 +151,6 @@
 	"hicbit.hicbit_clear|block":"清除数码管显示",
 	"hicbit.hicbit_digitaltubePort.port1|block":"接口1",
 	"hicbit.hicbit_digitaltubePort.port2|block":"接口2",
-	"hicbit.hicbit_convertHandCmd|block":"转换uHand:bit指令 %data"
+	"hicbit.hicbit_convertHandCmd|block":"转换uHand:bit指令 %data",
+	"hicbit.setDisplay|block":"屏幕显示 行数：%line|内容：%text| 数值：%value| 量程：%unit1|"
 }
